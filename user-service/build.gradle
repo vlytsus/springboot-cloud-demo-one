@@ -1,7 +1,7 @@
 buildscript {
     ext {
         springBootPlugin = 'org.springframework.boot:spring-boot-gradle-plugin'
-        springBootVersion = '2.0.2.RELEASE'
+        springBootVersion = '1.5.10.RELEASE'
         thinPlugin = 'org.springframework.boot.experimental:spring-boot-thin-gradle-plugin'
         thinVersion = '1.0.11.RELEASE'
     }
@@ -12,6 +12,10 @@ buildscript {
         classpath("${springBootPlugin}:${springBootVersion}")
         classpath("${thinPlugin}:${thinVersion}")
     }
+}
+
+plugins {
+    id 'org.springframework.boot' version '1.5.10.RELEASE'
 }
 
 apply plugin: 'java'
@@ -29,19 +33,34 @@ repositories {
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    implementation 'io.springfox:springfox-data-rest:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //testImplementation 'org.springframework.kafka:spring-kafka-test'
+
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
 }
 
+/*
 springBoot {
     mainClassName = 'com.app.Main'
-}
-
+}*/
+/*
 bootJar {
 //    This is overridden by the mainClassName in springBoot{} and added here for reference purposes.
     mainClassName = 'com.app.Main'
 
-}
+}*/
 
 //Enable this to generate and use a pom.xml file
 apply plugin: 'maven'
@@ -56,7 +75,7 @@ task createPom {
     }
 }
 //Uncomment the following to use your custom generated pom.xml
-bootJar.dependsOn = [createPom]
+//bootJar.dependsOn = [createPom]
 
 //Enable this to generate and use a thin.properties file
 //bootJar.dependsOn = [thinProperties]
