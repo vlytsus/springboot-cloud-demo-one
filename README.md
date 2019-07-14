@@ -3,9 +3,7 @@ Java application for Spring Cloud training
 
 ## Installation
 To run that project you have to install JDK, Gradle...
-
-To install JDK 8 download it from https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-To install Gradle follow instructions on that page: https://gradle.org/install/
+See detailed instructions at https://github.com/vlytsus/springboot-cloud-demo-one/wiki/Prepare-development-environment
 
 
 ## Usage
