@@ -1,5 +1,7 @@
 package com.app.user;
 
+import com.app.email.EmailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
 
+    private EmailService emailservice;
     private UserRepository userRepository;
 
     @Autowired
@@ -18,7 +22,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(UserEntity user) {
-        userRepository.save(user);
+        log.debug("saveUser: ", user);
+
+        user = userRepository.save(user);
+        emailservice.verifyEmail(user.getId(), user.getUsername());
     }
 
     @Override
@@ -30,11 +37,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+        UserEntity user = userRepository.findByUsername(username);
+        log.debug("getUserByUsername: ", user);
+        return user;
     }
 
     @Override
     public UserEntity getUserByUid(Long uid) {
-        return userRepository.findById(uid).get();
+        UserEntity user = userRepository.findById(uid).get();
+        log.debug("getUserByUsername: ", user);
+        return user;
     }
 }
