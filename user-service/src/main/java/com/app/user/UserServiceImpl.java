@@ -12,27 +12,20 @@ import java.util.List;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
-    private EmailService emailservice;
+    private EmailService emailService;
     private UserRepository userRepository;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository){
+    public UserServiceImpl(UserRepository userRepository, EmailService emailservice){
+        this.emailService = emailservice;
         this.userRepository = userRepository;
     }
 
     @Override
     public void saveUser(UserEntity user) {
         log.debug("saveUser: ", user);
-
         user = userRepository.save(user);
-        emailservice.verifyEmail(user.getId(), user.getUsername());
-    }
-
-    @Override
-    public List<UserEntity> getUsers() {
-        List<UserEntity> users = new ArrayList<>();
-        userRepository.findAll().forEach(users::add);
-        return users;
+        emailService.verifyEmail(user.getId(), user.getUsername());
     }
 
     @Override
@@ -40,6 +33,13 @@ public class UserServiceImpl implements UserService {
         UserEntity user = userRepository.findByUsername(username);
         log.debug("getUserByUsername: ", user);
         return user;
+    }
+
+    @Override
+    public List<UserEntity> getUsers() {
+        List<UserEntity> users = new ArrayList<>();
+        userRepository.findAll().forEach(users::add);
+        return users;
     }
 
     @Override
