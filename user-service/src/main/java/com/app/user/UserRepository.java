@@ -1,12 +1,12 @@
 package com.app.user;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
-@RepositoryRestResource(collectionResourceRel = "users", path = "users")
-public interface UserRepository extends CrudRepository<UserEntity, Long> {
+@Repository
+public interface UserRepository extends CrudRepository<UserEntity, UUID> {
     UserEntity findByUsername(String username);
 }

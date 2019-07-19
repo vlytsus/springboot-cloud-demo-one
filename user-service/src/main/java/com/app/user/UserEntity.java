@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -18,7 +19,7 @@ import javax.validation.constraints.NotEmpty;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID userId;
     @NotEmpty
     private String username;
     @ToString.Exclude

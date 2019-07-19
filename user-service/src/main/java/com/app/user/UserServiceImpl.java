@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserEntity user) {
         log.debug("saveUser: ", user);
         user = userRepository.save(user);
-        emailService.verifyEmail(user.getId(), user.getUsername());
+        emailService.verifyEmail(user.getUserId(), user.getUsername());
     }
 
     @Override
@@ -43,8 +44,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserByUid(Long uid) {
-        UserEntity user = userRepository.findById(uid).get();
+    public UserEntity getUserById(UUID userId) {
+        UserEntity user = userRepository.findById(userId).get();
         log.debug("getUserByUsername: ", user);
         return user;
     }
