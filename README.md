@@ -15,6 +15,18 @@ or
 mvn spring-boot:run
 ```
 
+To create new user you make HTTP POST request to: http://localhost:8081/users/
+With body
+```
+{ "username":"testy_testerson", "password":"pa$$W0rd", "firstName":"Testy", "lastName":"Testerson" }
+```
+To list all users make HTTP GET request to http://localhost:8081/users/
+And you should see response like:
+```
+[{"userId":"f0525226-2ad3-4250-b793-9374b363e60e","username":"testy_testerson","password":"pa$$W0rd","firstName":"Testy","lastName":"Testerson","active":null}]
+```
+
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
