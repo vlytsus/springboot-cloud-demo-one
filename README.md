@@ -2,7 +2,7 @@
 Java application for Spring Cloud training
 
 ## Installation
-To run that project you have to install JDK, Gradle...
+To run that project you have to install JDK, Maven...
 See detailed instructions at https://github.com/vlytsus/springboot-cloud-demo-one/wiki/Prepare-development-environment
 
 
