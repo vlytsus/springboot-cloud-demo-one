@@ -11,6 +11,8 @@ To run service call
 
 ```bash
 gradle bootRun
+or
+mvn spring-boot:run
 ```
 
 ## Contributing
