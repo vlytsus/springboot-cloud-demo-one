@@ -3,6 +3,9 @@ Java application for Spring Cloud training
 
 ## Installation
 To run that project you have to install JDK, Maven...
+
+In your favorite IDE you have to install Lombook plugin that generates getters & setters for pojo.
+
 See detailed instructions at https://github.com/vlytsus/springboot-cloud-demo-one/wiki/Prepare-development-environment
 
 
