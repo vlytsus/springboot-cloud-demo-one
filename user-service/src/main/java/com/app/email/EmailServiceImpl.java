@@ -2,8 +2,8 @@ package com.app.email;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -13,7 +13,7 @@ import java.util.UUID;
 public class EmailServiceImpl implements EmailService {
 
     @Autowired
-    private JavaMailSender mailSender;
+    private MailSender mailSender;
 
     @Override
     public void verifyEmail(UUID userId, String email){
@@ -23,6 +23,6 @@ public class EmailServiceImpl implements EmailService {
         message.setTo("scg.victa@gmail.com");
         message.setSubject("test message from micro service");
         message.setText("Example message text");
-   //     mailSender.send(message);
+//        mailSender.send(message);
     }
 }
