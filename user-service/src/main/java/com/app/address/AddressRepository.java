@@ -8,6 +8,4 @@ import java.util.UUID;
 @Repository
 public interface AddressRepository extends CrudRepository<AddressEntity, UUID> {
 
-//    UserAddressEntity fingByCity(String city);
-
 }
