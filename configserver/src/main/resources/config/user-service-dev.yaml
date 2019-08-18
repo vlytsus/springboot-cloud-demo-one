@@ -8,4 +8,4 @@ eureka:
   instance:
     preferIpAddress: true
 
-config-name: application-dev.yaml
+config-name: user-service-dev.yaml
