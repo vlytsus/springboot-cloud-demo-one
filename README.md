@@ -2,9 +2,15 @@
 Java application for Spring Cloud training
 
 ## Trainings
-There will be several trainings with presentations and demo projects. The goal is to refactor some simple monolith application to several microservices and make aquintance with popular cloud technologies.
+There will be several trainings with presentations and demo projects. The goal is to refactor some simple monolith application to several microservices and make aquintance with popular spring cloud services and tools.
 
-Since monolith and microservices projects should evolve in parallel, to be available for comparison, I created several branches. “master” branch will contain no code. It will contain presentations used in training.
+Since monolith and microservices projects should evolve in parallel, to be available for comparison, I created several branches. “master” branch will contain no code. It will contain presentations used in training:
+* [Introduction to microservices Part 1 : Monolith](../../raw/master/docs/Introduction_To_Microservices_Part_1_monolith.pptx)
+* [Introduction to microservices Part 2 : Spring Boot](../../raw/master/docs/Introduction_To_Microservices_Part_2_boot.pptx)
+* [Introduction to microservices Part 3 : Microservices](../../raw/master/docs/Introduction_To_Microservices_Part_3_microservice.pptx)
+* [Introduction to microservices Part 4 : CQRS](../../raw/master/docs/Introduction_To_Microservices_Part_4_cqrs.pptx)
+* [Introduction to microservices Part 5 : Docker](../../raw/master/docs/Introduction_To_Microservices_Part_5_docker.pptx)
+* [Introduction to microservices Part 6 : Kubernetes](../../raw/master/docs/Introduction_To_Microservices_Part_6_kubernetes.pptx)
 
 Branch https://github.com/vlytsus/springboot-cloud-demo-one/tree/spring_boot_2_maven_monolith will contain monolith application.
 
