@@ -8,9 +8,10 @@ Since monolith and microservices projects should evolve in parallel, to be avail
 * [Introduction to microservices Part 1 : Monolith](../../raw/master/docs/Introduction_To_Microservices_Part_1_monolith.pptx)
 * [Introduction to microservices Part 2 : Spring Boot](../../raw/master/docs/Introduction_To_Microservices_Part_2_boot.pptx)
 * [Introduction to microservices Part 3 : Microservices](../../raw/master/docs/Introduction_To_Microservices_Part_3_microservice.pptx)
-* [Introduction to microservices Part 4 : CQRS](../../raw/master/docs/Introduction_To_Microservices_Part_4_cqrs.pptx)
-* [Introduction to microservices Part 5 : Docker](../../raw/master/docs/Introduction_To_Microservices_Part_5_docker.pptx)
-* [Introduction to microservices Part 6 : Kubernetes](../../raw/master/docs/Introduction_To_Microservices_Part_6_kubernetes.pptx)
+* [Introduction to microservices Part 4 : Security](../../raw/master/docs/Introduction_To_Microservices_Part_4_security.pptx)
+* [Introduction to microservices Part 5 : CQRS](../../raw/master/docs/Introduction_To_Microservices_Part_5_cqrs.pptx)
+* [Introduction to microservices Part 6 : Docker](../../raw/master/docs/Introduction_To_Microservices_Part_6_docker.pptx)
+* [Introduction to microservices Part 7 : Kubernetes](../../raw/master/docs/Introduction_To_Microservices_Part_7_kubernetes.pptx)
 
 Branch https://github.com/vlytsus/springboot-cloud-demo-one/tree/spring_boot_2_maven_monolith will contain monolith application.
 
