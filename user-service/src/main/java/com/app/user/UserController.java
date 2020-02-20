@@ -1,5 +1,6 @@
 package com.app.user;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,13 +9,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("users")
+@RequiredArgsConstructor
 public class UserController {
-    private UserService userService;
-
-    @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
-    }
+    private final UserService userService;
 
     @PostMapping(path = "/")
     public void createUser(@RequestBody UserEntity user){
